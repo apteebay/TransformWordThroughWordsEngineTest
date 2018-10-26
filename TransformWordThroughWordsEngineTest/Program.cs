@@ -37,6 +37,7 @@ namespace TransformWordThroughWordsEngineTest
 
         public static List<string> FindPath(IEnumerable<string> input, string start, string end)
         {
+            // As is this does not work with Spin to Spot
             // Use IEnumerable<List> for imput
             char[] allcharacters =
 
