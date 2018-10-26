@@ -28,20 +28,26 @@ namespace TransformWordThroughWordsEngineTest
 
         static void Main(string[] args)
         {
-            var transformations = FindPath(getWords(), "Spin", "Spot");
+            var transformations = FindPath(getWords(), "AAAS", "ZOOM");
         }
 
-        static HashSet<string> Dictionary = new HashSet<string>();
+        static HashSet<string> Dictionary = new HashSet<string>(StringComparer.CurrentCultureIgnoreCase);
         //dictionary used to find the parent in every node in the graph and to avoid traversing an already traversed node
         static Dictionary<string, string> parents = new Dictionary<string, string>();
 
         public static List<string> FindPath(IEnumerable<string> input, string start, string end)
         {
-            // As is this does not work with Spin to Spot
-            // Use IEnumerable<List> for imput
-            char[] allcharacters =
 
-    {'\\','0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+            // This Engine seems to work
+            // We may be able tp improve performance by using LINQ and a Levenshtein distance on the Dicionary to get the Parents
+            // but we can look at that later
+
+            char[] allcharacters =
+            {
+                '\\','&','0','1','2','3','4','5','6','7','8','9',
+                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
+            };
 
             // A P Teebay in final use all Printable Char (ASCII 32 - 126)
             // A P Teebay Use Dictonary.UnionWith(input)
@@ -60,7 +66,7 @@ namespace TransformWordThroughWordsEngineTest
                             StringBuilder newWordBuilder = new StringBuilder(s);
                             newWordBuilder[i] = c;
                             string newWord = newWordBuilder.ToString();
-                            if (Dictionary.Contains(newWord))
+                            if (Dictionary.Contains(newWord.TrimEnd()))
                             {
                                 //avoid traversing a previously traversed node
                                 if (!parents.Keys.Contains(newWord))
@@ -78,8 +84,9 @@ namespace TransformWordThroughWordsEngineTest
                         }
                     }
                 }
-                currentFrontier.Clear();
-                currentFrontier.Concat(nextFrontier);
+                currentFrontier = new List<string>(nextFrontier);
+                //currentFrontier.Clear();
+                //currentFrontier.Concat(nextFrontier);
                 nextFrontier.Clear();
             }
             throw new ArgumentException("The given dictionary cannot be used to get a path from start to end");
