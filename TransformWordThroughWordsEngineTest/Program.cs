@@ -8,21 +8,40 @@ using System.Threading.Tasks;
 
 namespace TransformWordThroughWordsEngineTest
 {
+    static class EIList
+    {
+        private static Random m_random = new Random();
+
+        public static void Shuffle<T>(this IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = m_random.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+    }
     class Program
     {
+
         private static IEnumerable<string> getWords()
         {
             var words = new List<string>();
-            var filepath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Replace("file:\\",""),"Data");
+            var filepath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Replace("file:\\", ""), "Data");
             filepath = Path.Combine(filepath, "words-english1.txt");
 
             using (var reader = new StreamReader(filepath))
             {
                 string word;
-                while ((word = reader.ReadLine()) != null) words.Add(word);
+                while ((word = reader.ReadLine()) != null) if (word.Length==4) words.Add(word);
             }
 
-
+            // Only four letter words and shuffel to test non Alphabetic order
+            words.Shuffle();
             return words;
         }
 
@@ -55,6 +74,12 @@ namespace TransformWordThroughWordsEngineTest
             List<string> currentFrontier = new List<string>();
             List<string> nextFrontier = new List<string>();
             currentFrontier.Add(start);
+
+            // Build up a Parents Dictionary of everything that is within 1 letter change
+            // of the Start word and in the Dictionary.
+            // Then do the same for each word found and same again for each of those.
+            // When the End word is the word we are checking we should be able to
+            // walk the Parents Backwards to get our list
             while (currentFrontier.Count > 0)
             {
                 foreach (string s in currentFrontier)

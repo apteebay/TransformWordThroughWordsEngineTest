@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformWordThroughWordsEngineTest", "TransformWordThroughWordsEngineTest\TransformWordThroughWordsEngineTest.csproj", "{9E2F513C-B346-41B5-A99C-02827D9D5762}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformWordInterface", "TransformWordInterface\TransformWordInterface.csproj", "{6BF3AD34-A851-4A51-93E5-C7A56BD3E7BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTransformMock", "WordTransformMock\WordTransformMock.csproj", "{70A7A2B1-E3FB-4E6A-BD82-04D9DEE9C5D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTransFormTest", "WordTransFormtest\WordTransFormTest.csproj", "{4C07F373-DB2A-4462-AAC4-F8C6BFA7E8AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{A3C13E61-92BF-4483-9DB8-24DEB5B8108F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTransformFastenshtein", "WordTransformFastenshtein\WordTransformFastenshtein.csproj", "{BDF45727-3797-47EE-8BC5-569FE4A3B6AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTransformTxtDict", "WordTransformTxtDict\WordTransformTxtDict.csproj", "{4D955F60-9659-4CC4-8AEE-D7CFCD59952C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{9E2F513C-B346-41B5-A99C-02827D9D5762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E2F513C-B346-41B5-A99C-02827D9D5762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E2F513C-B346-41B5-A99C-02827D9D5762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF3AD34-A851-4A51-93E5-C7A56BD3E7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF3AD34-A851-4A51-93E5-C7A56BD3E7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF3AD34-A851-4A51-93E5-C7A56BD3E7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF3AD34-A851-4A51-93E5-C7A56BD3E7BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A7A2B1-E3FB-4E6A-BD82-04D9DEE9C5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A7A2B1-E3FB-4E6A-BD82-04D9DEE9C5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A7A2B1-E3FB-4E6A-BD82-04D9DEE9C5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A7A2B1-E3FB-4E6A-BD82-04D9DEE9C5D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C07F373-DB2A-4462-AAC4-F8C6BFA7E8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C07F373-DB2A-4462-AAC4-F8C6BFA7E8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C07F373-DB2A-4462-AAC4-F8C6BFA7E8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C07F373-DB2A-4462-AAC4-F8C6BFA7E8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C13E61-92BF-4483-9DB8-24DEB5B8108F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C13E61-92BF-4483-9DB8-24DEB5B8108F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C13E61-92BF-4483-9DB8-24DEB5B8108F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C13E61-92BF-4483-9DB8-24DEB5B8108F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF45727-3797-47EE-8BC5-569FE4A3B6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF45727-3797-47EE-8BC5-569FE4A3B6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF45727-3797-47EE-8BC5-569FE4A3B6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF45727-3797-47EE-8BC5-569FE4A3B6AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D955F60-9659-4CC4-8AEE-D7CFCD59952C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D955F60-9659-4CC4-8AEE-D7CFCD59952C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D955F60-9659-4CC4-8AEE-D7CFCD59952C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D955F60-9659-4CC4-8AEE-D7CFCD59952C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
