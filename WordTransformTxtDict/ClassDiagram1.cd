@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WordTransformTxtDict.WordTransformer">
+    <Position X="0.75" Y="2.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAIAACAAAAgAAAQgAhAABAAIBAAAAAAAAAA=</HashCode>
+      <FileName>WordTransformer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WordTransformTxtDict.Engine">
+    <Position X="3" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WordTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransformWordInterface.WordTransformerEngine">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="TransformWordInterface.IWordTransformer">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Delegate Name="TransformWordInterface.TransformMethod" Collapsed="true">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

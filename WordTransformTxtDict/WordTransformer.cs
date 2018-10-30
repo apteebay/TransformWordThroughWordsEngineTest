@@ -90,12 +90,20 @@ namespace WordTransformTxtDict
 
         private void method(IWordTransformer transformer)
         {
-            char[] allcharacters = new Utilities.UniqueChars(transformer.Dictionary).Chars.OrderBy(c => c).ToArray();
+            var allcharacters = new Utilities.UniqueChars(transformer.Dictionary.Where(w => w.Length == transformer.StartWord.Length)).Chars.ToList();
+            // Adding the Start and End word Chars to the list ensures that if Caps exist in either word but not in Dictionary
+            // they will be scanned and matched
+            allcharacters.AddRange(transformer.StartWord.Distinct());
+            allcharacters.AddRange(transformer.EndWord.Distinct());
+            allcharacters = allcharacters.Distinct().OrderBy(c => c).ToList();
+            
 
             Dictionary<string, string> parents = new Dictionary<string, string>();
             // As we're putting the dictionary into a HashSet alphabetical order of the orginal dictionary
             // does not matter
             HashSet<string> searchDictionary = new HashSet<string>(transformer.Dictionary,StringComparer.CurrentCultureIgnoreCase);
+            // The test input is 'Spin' to 'Spot' but the dictionary does not contain either. It actually contains 'spin' and 'spot'
+            // By making the StringComparer ignore the case we can still find matches
 
             List<string> currentFrontier = new List<string>();
             List<string> nextFrontier = new List<string>();
@@ -142,7 +150,8 @@ namespace WordTransformTxtDict
                                 }
 
                             }
-                            if (newWord.ToString() == transformer.EndWord)
+                            // check for case also here otherwise we would have to clean the Transforms for case after (as we do in the Fastenstien method)
+                            if (newWord.ToString() == transformer.EndWord) 
                             {
                                 extractPath(transformer.StartWord, transformer.EndWord).ToList().ForEach(w => transformer.Transforms.Add(w));
                                 return;
