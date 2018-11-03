@@ -11,26 +11,8 @@ namespace Utilities
     /// <summary>
     /// Reads the lines of a Text file into an IList of string></c>
     /// </summary>
-    public class ReadTxtToList
+    public static class ReadTxtToList
     {
-        public ReadTxtToList(string dictionaryFilePath) => readFile(dictionaryFilePath);
-
-        public IList<string> Lines { get; private set; }
-
-        private void readFile(string dictionaryFilePath)
-        {
-            Lines = new List<string>();
-
-            if (File.Exists(dictionaryFilePath))
-            {
-                using (var reader = new StreamReader(dictionaryFilePath))
-                {
-                    string line;
-                    while ((line = reader.ReadLine()) != null) Lines.Add(line);
-                }
-
-            }
-
-        }
+        public static List<string> readFile(string dictionaryFilePath) => File.Exists(dictionaryFilePath) ? File.ReadAllLines(dictionaryFilePath).ToList() : new List<string>;
     }
 }
